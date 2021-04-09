@@ -29,7 +29,5 @@ if (emailLabel !== "password") {
   errors.push ('<li>this label must get the password atribute</li>')
 }
 
-
-
 var errorListHTML = document.getElementById('error-list');
 errorListHTML.innerHTML = errors.join(' ')
