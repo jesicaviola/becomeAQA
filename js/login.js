@@ -17,3 +17,19 @@ for (var i = 0; i < inputs.length; i++) {
   }
 }
 
+var labels = document.getElementsByTagName('label');
+
+var emailLabel = labels[0].getAttribute('for');
+if (emailLabel !== "email") {
+  errors.push ('<li>this label must get the email atribute</li>')
+}
+
+var emailLabel = labels[1].getAttribute('for');
+if (emailLabel !== "password") {
+  errors.push ('<li>this label must get the password atribute</li>')
+}
+
+
+
+var errorListHTML = document.getElementById('error-list');
+errorListHTML.innerHTML = errors.join(' ')
