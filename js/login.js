@@ -24,16 +24,16 @@ if (emailLabel !== "email") {
   errors.push ('<li>this label must get the email atribute</li>');
 }
 
-var emailLabel = labels[1].getAttribute('for');
-if (emailLabel !== "password") {
+var passwordLabel = labels[1].getAttribute('for');
+if (passwordLabel !== "password") {
   errors.push ('<li>this label must get the password atribute</li>');
 }
 
 var button = document.getElementsByTagName('button');
 
-
 var loginButton = button[0].getAttribute('type');
 console.log(loginButton);
+
 if (loginButton !== "submit") {
   errors.push ('<li>Incorrect button</li>');
 }
