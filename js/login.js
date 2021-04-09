@@ -10,5 +10,3 @@ var inputs = document.getElementsByTagName("input");
 if (inputs.length !== 2) {
   errors.push ('<li>the document should have 2 inputs</li>')
 }
-
-
