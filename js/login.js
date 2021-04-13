@@ -1,4 +1,32 @@
+var email = document.getElementById('email');
+var errorEmail = document.getElementById('email-error');
 
+email.onblur = function (evt) {
+  if (email.value.indexOf('@') < 1) {
+    errorEmail.innerHTML = 'Please insert a valid email';
+  }
+}
+
+email.onfocus = function (evt) {
+    errorEmail.innerHTML = ' ';
+    console.log(email);
+}
+
+var password = document.getElementById('password');
+var errorPassword = document.getElementById('psw-error');
+
+password.onblur = function (evt) {
+  if (password.value.length() < 8) {
+    errorPassword.innerHTML = 'Please insert a valid password';
+  }
+}
+
+password.onfocus = function (evt) {
+  errorPassword.innerHTML = ' ';
+}
+
+
+/*
 var errors = []
 
 var forms = document.getElementsByTagName("form");
@@ -44,3 +72,4 @@ if (errors.length === 0) {
 } else {
   errorListHTML.innerHTML = errors.join(' ');
 }
+*/
