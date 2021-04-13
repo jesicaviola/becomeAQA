@@ -16,7 +16,7 @@ var password = document.getElementById('password');
 var errorPassword = document.getElementById('psw-error');
 
 password.onblur = function (evt) {
-  if (password.value.length() < 8) {
+  if (password.value.length < 8) {
     errorPassword.innerHTML = 'Please insert a valid password';
   }
 }
@@ -24,6 +24,18 @@ password.onblur = function (evt) {
 password.onfocus = function (evt) {
   errorPassword.innerHTML = ' ';
 }
+
+var loginButton = document.getElementsByClassName("signInBtn");
+loginButton[0].onclick = function (evt) {
+  evt.preventDefault();
+  console.log(email.value, password.value);
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function(response){
+      return response.json();  
+    })
+    .then(data => console.log(data));
+}
+
 
 
 /*

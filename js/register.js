@@ -52,6 +52,18 @@ repeatPassword.onfocus = function (evt) {
   errorRepeatPassword.innerHTML = ' ';
 }
 
+
+var registerButton = document.getElementsByClassName("signUpBtn");
+registerButton[0].onclick = function (evt) {
+  evt.preventDefault();
+  console.log(email.value, password.value);
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function(response){
+      return response.json();  
+    })
+    .then(data => console.log(data));
+}
+
 /*
 var myInput = document.getElementById("password");
 var letter = document.getElementById("letter");
